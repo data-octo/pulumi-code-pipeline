@@ -1,4 +1,4 @@
-# Pulumi Implementation for AWS CodeCommit, CodeDeploy, and CodePipeline
+# Automated Code Deployment with Pulumi IaC and AWS CodePipeline
 
 ## Introduction
 
@@ -36,3 +36,4 @@ Source code committed from local repository has been successfully deployed to EC
 
 ## Reference
 - https://docs.aws.amazon.com/codepipeline/latest/userguide/tutorials-simple-codecommit.html
+- https://www.pulumi.com/registry/packages/aws/installation-configuration/
