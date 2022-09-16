@@ -1,5 +1,14 @@
 # Pulumi Implementation for AWS CodeCommit, CodeDeploy, and CodePipeline
 
+In this repository, we use CodePipeline to deploy code maintained in a CodeCommit repository to a single Amazon EC2 instance. The pipeline is triggered when we push a change to the CodeCommit repository. The pipeline deploys the changes to an Amazon EC2 instance using CodeDeploy as the deployment service.
+
+The pipeline has two stages:
+1. A source stage (Source) for your CodeCommit source action.
+2. A deployment stage (Deploy) for your CodeDeploy deployment action.
+
+![picture 7](images/b4337496b64e78ab2b3dbe6d4dbf71b7ee221bddf223cded16cb2f357f790168.png)  
+
+
 ### Step 1: Create a CodeCommit repository
 ![picture 1](images/70fc4e47e603c04ad6d024eca4fae6de5b4b47f9530ed88989a4b587f7ae5d5c.png)  
 
