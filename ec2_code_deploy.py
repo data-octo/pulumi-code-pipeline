@@ -73,8 +73,7 @@ def create_ec2_instance():
     ec2_instance = aws.ec2.Instance(
             ec2_name,
             instance_type=ec2_type,
-            vpc_security_group_ids=[sg.id],
-            # ami=ami.id,
+            vpc_security_group_ids=[sg.id],            
             ami='ami-0c2ab3b8efb09f272', # amazon linux ami
             iam_instance_profile=instance_profile,        
             associate_public_ip_address=True,

@@ -50,31 +50,11 @@ def create_pipeline():
         policy_arn="arn:aws:iam::aws:policy/AdministratorAccess",
         role=codepipeline_role.name)
 
-
-    # s3kmskey = aws.kms.get_alias(name="alias/pulumi-kms-key")
-
-    # s3kmskey = aws.kms.Key("pulumi-key",
-    #     deletion_window_in_days=10,
-    #     description="Pulumi KMS key")
-
     codepipeline = aws.codepipeline.Pipeline("codepipeline", name="PulumiStackPipeline",
             
-        # artifact_stores=[aws.codepipeline.PipelineArtifactStoreArgs(
-        #     location=codepipeline_bucket.bucket,
-        #     type="S3",
-        #     encryption_key=aws.codepipeline.PipelineArtifactStoreEncryptionKeyArgs(
-        #         id=s3kmskey.arn,
-        #         type="KMS",
-        #     ),
-        # )],
-
         artifact_store=aws.codepipeline.PipelineArtifactStoreArgs(
                     location=codepipeline_bucket.bucket,
                     type="S3",
-                    # encryption_key=aws.codepipeline.PipelineArtifactStoreEncryptionKeyArgs(
-                    #     id=s3kmskey.arn,
-                    #     type="KMS",
-                    # ),
                 ),
         
         role_arn=codepipeline_role.arn,

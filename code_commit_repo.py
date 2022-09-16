@@ -9,20 +9,6 @@ def create_repo():
 
     pulumi.export('repo_ssh_url', pulumi_stack_repo.clone_url_ssh)
 
-# # Create Pulumi Policy Pack CodeCommit Repo
-# pulumi_policy_pack_repo = aws.codecommit.Repository("pulumi-policy-pack-repo",
-#     description="Pulumi Policy Pack Repository",
-#     repository_name="PulumiPolicyPackRepository")
-
-# pulumi.export('pulumi_policy_pack_ssh_url', pulumi_policy_pack_repo.clone_url_ssh)
-
-# # Create Pulumi Resources Stack CodeCommit Repo
-# pulumi_stack_repo = aws.codecommit.Repository("pulumi-stack-repo",
-#     description="Pulumi Stack Repository",
-#     repository_name="PulumiStackRepository")
-
-# pulumi.export('pulumi_stack_ssh_url', pulumi_stack_repo.clone_url_ssh)
-
 # Create IAM user with ssh key
 def create_iam_ssh():
     iam_user = aws.iam.User("pulumiUser", path="/")
