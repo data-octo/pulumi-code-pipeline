@@ -1,4 +1,3 @@
-
 import pulumi_aws as aws
 import json
 # Create AWS EC2 for CodeDeploy
